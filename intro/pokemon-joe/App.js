@@ -5,12 +5,13 @@ export default function App() {
   const [enteredGoal, setEnteredGoal] = useState("");
 
   const goalInputHandler = enteredText => {
+    console.log(enteredText)
     setEnteredGoal(enteredText);
   };
 
   const addGoalHandler = () => {
-    
-  }
+    console.log(enteredGoal);
+  };
 
   return (
     <View style={styles.screen}>
@@ -20,8 +21,8 @@ export default function App() {
           style={styles.input}
           onChangeText={goalInputHandler}
           value={enteredGoal}
-        />
-        <Button title="ADD" />
+        /> 
+        <Button title="ADD" onPress={addGoalHandler} />
       </View>
       <View></View>
     </View>
