@@ -16,23 +16,16 @@ export default function App() {
   const [enteredGoal, setEnteredGoal] = useState("");
   const [courseGoals, setCourseGoals] = useState([]);
 
-  const goalInputHandler = enteredText => {
-    console.log(enteredText);
-    setEnteredGoal(enteredText);
-  };
-
-  const addGoalHandler = () => {
+  const addGoalHandler = (goalTitle) => {
     setCourseGoals(currentGoals => [
       ...currentGoals,
-      { id: Math.random().toString(), value: enteredGoal }
+      { id: Math.random().toString(), value: goalTitle }
     ]);
   };
 
   return (
     <View style={styles.screen}>
       <GoalInput
-        goalInputHandler={goalInputHandler}
-        enteredGoal={enteredGoal}
         addGoalHandler={addGoalHandler}
       />
       <FlatList
@@ -46,5 +39,5 @@ export default function App() {
 const styles = StyleSheet.create({
   screen: {
     padding: 50
-  }
+  },
 });

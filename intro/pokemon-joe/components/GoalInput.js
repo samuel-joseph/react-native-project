@@ -1,17 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import GoalItem from "./GoalItem";
 import { View, TextInput, StyleSheet, Button } from "react-native";
 
 const GoalInput = props => {
+  const [enteredGoal, setEnteredGoal] = useState("");
+
+  const goalInputHandler = enteredText => {
+    console.log(enteredText);
+    setEnteredGoal(enteredText);
+  };
+
   return (
     <View style={styles.inputContainer}>
       <TextInput
         placeholder="Course Goal"
         style={styles.input}
-        onChangeText={props.goalInputHandler}
+        onChangeText={goalInputHandler}
         value={props.enteredGoal}
       />
-      <Button title="ADD" onPress={props.addGoalHandler} />
+      <Button title="ADD" onPress={props.addGoalHandler.bind(this, enteredGoal)} />
     </View>
   );
 };
