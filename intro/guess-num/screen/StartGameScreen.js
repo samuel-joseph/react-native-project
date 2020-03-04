@@ -9,7 +9,7 @@ const StartGameScreen = props => {
         <Text>Select a Number</Text>
         <TextInput />
         <View style={styles.buttonContainer}>
-          <Button title="Rest" onPress={() => {}} />
+          <Button title="Reset" onPress={() => {}} />
           <Button title="Confirm" onPress={() => {}} />
         </View>
       </View>
@@ -36,7 +36,9 @@ const styles = StyleSheet.create({
     shadowRadius: 6,
     shadowOpacity: 0.26,
     elevation: 5,
-    backgroundColor: "white"
+    backgroundColor: "white",
+    padding: 20,
+    borderRadius: 10
   },
   buttonContainer: {
     flexDirection: "row",
