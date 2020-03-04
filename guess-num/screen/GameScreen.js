@@ -9,7 +9,7 @@ const generateRandomBetween = (min, max, exclude) => {
     return generateRandomBetween(min, max, exclude);
   } else {
     return rndNum;
-  }
+  } 
 };
 
 const GameScreen = props => {
